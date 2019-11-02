@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Platform, StatusBar, View, Text } from 'react-native';
+import AppNavigator from './navigation/AppNavigator';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+      <Text>So my AppNavigator causes the app not to load :/</Text>
     </View>
   );
 }
