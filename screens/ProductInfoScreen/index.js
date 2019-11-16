@@ -1,12 +1,15 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 
-export default function ProductInfoScreen() {
-    return (
-      <View style={styles.container}>
-          <Text style={styles.text}>Product Info Screen</Text>
-      </View>
-    );
+export default function ProductInfoScreen(props) {
+  const { navigate } = props.navigation;
+  return (
+    <View style={styles.container}>
+        <Text style={styles.text}>Product Info Screen</Text>
+        <Button title="Home" onPress={() => navigate('Home')} />
+
+    </View>
+  );
 }
 
 ProductInfoScreen.navigationOptions = {

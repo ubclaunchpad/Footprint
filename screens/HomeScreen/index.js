@@ -1,12 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-
-export default function HomeScreen() {
-    return (
-      <View style={styles.container}>
-          <Text style={styles.text}>Home Screen</Text>
-      </View>
-    );
+import {Button} from 'react-native';
+export default function HomeScreen(props) {
+  const { navigate } = props.navigation;
+  return (
+    <Button title="Camera" onPress={() => navigate('Camera')} />
+  );
 }
 
 HomeScreen.navigationOptions = {

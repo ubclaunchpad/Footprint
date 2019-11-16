@@ -1,10 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
 
-export default function CameraScreen() {
+export default function CameraScreen(props) {
+  const { navigate } = props.navigation;
     return (
       <View style={styles.container}>
           <Text style={styles.text}>Camera Screen</Text>
+          <Button title="Take Picture" onPress={() => navigate('ProductInfo')} />
+
       </View>
     );
 }
