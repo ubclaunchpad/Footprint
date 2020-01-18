@@ -32,21 +32,20 @@ export default class CameraExample extends React.Component {
             };
     }
     
-    async sendToServer(photo) {
-        console.log(photo.base64);
-        const response = await fetch('http://1e58dd6c.ngrok.io/process-request', {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                image: photo.base64,
-            }),
-        });
-        const responseBody = await response.json();
-        console.log(responseBody);
-    }
+  async sendToServer(photo) {
+    const response = await fetch('https://003beecc.ngrok.io/process-request', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        image: photo.base64,
+      }),
+    });
+    const responseBody = await response.json();
+    return responseBody;
+  }
 
   async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -55,13 +54,14 @@ export default class CameraExample extends React.Component {
  
     async takePicture() {
         const { navigate } = this.props.navigation;
-        const photo = await this.camera.takePictureAsync({ base64: true });
+      const photo = await this.camera.takePictureAsync({ base64: true });
+      let response;
         try {
-            await this.sendToServer(photo);
+            response = await this.sendToServer(photo);
         } catch (e) {
             console.log(`Error: ${e}`)
         }
-        navigate("ProductInfo");
+      navigate("ProductInfo", {response: response});
     }
       
 
