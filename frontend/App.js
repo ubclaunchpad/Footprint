@@ -1,14 +1,13 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import HomeScreen from "./screens/HomeScreen";
+import AnalyticsScreen from "./screens/AnalyticsScreen";
 import CameraScreen from "./screens/CameraScreen";
 import ProductInfoScreen from './screens/ProductInfoScreen';
 const MainNavigator = createStackNavigator({
-  Home: { screen: HomeScreen },
+  Analytics: { screen: AnalyticsScreen },
   Camera: { screen: CameraScreen },
   ProductInfo: {screen: ProductInfoScreen}
 });
-
 
 const App = createAppContainer(MainNavigator);
 
