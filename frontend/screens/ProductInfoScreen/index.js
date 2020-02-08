@@ -8,7 +8,7 @@ export default function ProductInfoScreen(props) {
     <View style={styles.container}>
       <Text style={styles.text}>{response}</Text>
         <Text style={styles.text}>Product Info Screen</Text>
-        <Button title="Home" onPress={() => navigate('Home')} />
+        <Button title="Analytics" onPress={() => navigate('Analytics')} />
 
     </View>
   );

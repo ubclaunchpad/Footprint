@@ -36,7 +36,12 @@ const styles = StyleSheet.create({
 
 
 export default class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {navigate: props.navigation};
+  }
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View>
   <Text>Bezier Line Chart</Text>
@@ -82,6 +87,7 @@ export default class HomeScreen extends React.Component {
       borderRadius: 16
     }}
   />
+  <Button title="Camera" onPress={() => navigate('Camera')} />
 </View>
     );
   }
