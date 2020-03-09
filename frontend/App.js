@@ -12,6 +12,9 @@ const AppStack = createStackNavigator({
   ProductInfo: {screen: ProductInfoScreen }
 });
 
+// We can easily add a loading screen and registration screen
+// if we wanted to change the navigation flow later by adding
+// more screens and stack navigators
 const MainNavigator = createSwitchNavigator({
   Login: { screen: LoginScreen },
   Profile: { screen: ProfileScreen },

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
 export default class ProfileScreen extends Component {
   render() {

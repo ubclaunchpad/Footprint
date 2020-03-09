@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from 'react-native';
-import { VictoryLine, VictoryChart } from "victory-native";
+import { VictoryLine, VictoryChart } from 'victory-native';
 import MSSQL from 'react-native-mssql';
 import {
   LineChart,
@@ -10,7 +10,7 @@ import {
   ProgressChart,
   ContributionGraph,
   StackedBarChart
-} from "react-native-chart-kit";
+} from 'react-native-chart-kit';
 
 const data = [
   { quarter: 1, earnings: 13000 },

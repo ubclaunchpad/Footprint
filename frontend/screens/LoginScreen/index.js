@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
-import * as Google from "expo-google-app-auth";
+import * as Google from 'expo-google-app-auth';
 
 import * as iosAuth from '../../secrets/ios-auth-client';
 
