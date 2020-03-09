@@ -13,6 +13,10 @@ export default class ProfileScreen extends Component {
           title="Sign out"
           onPress={() => this.props.navigation.navigate("Login")}
         />
+        <Button
+          title="Go to Dashboard"
+          onPress={() => this.props.navigation.navigate("App")}
+        />
       </View>
     );
   }
