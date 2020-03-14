@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import Logo from '../../assets/logo.svg';
 
 import * as Google from 'expo-google-app-auth';
 
@@ -35,7 +36,13 @@ export default class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button title="Login with Google" onPress={this.signInWithGoogle} />
+        <Logo style={styles.logo}></Logo>
+        <TouchableOpacity style={styles.button} onPress={this.onPress}>
+         <Text style={styles.buttonText}> Login </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonGoogle} onPress={this.signInWithGoogle}>
+         <Text style={styles.buttonText}> Sign in with Google </Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -47,5 +54,36 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center"
-  }
+  },
+  logo: {
+    marginBottom: 100,
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#7FCD91',
+    textAlignVertical: 'center',
+    height: 48,
+    width: 311,
+    paddingTop: 6,
+    borderRadius: 24,
+    marginVertical: 10,
+  },
+  buttonGoogle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#555555',
+    textAlignVertical: 'center',
+    height: 48,
+    width: 311,
+    paddingTop: 6,
+    borderRadius: 24,
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    lineHeight: 16,
+    fontSize: 16,
+    fontStyle: 'normal',
+    fontFamily: 'Hiragino Sans',
+  },
 });
