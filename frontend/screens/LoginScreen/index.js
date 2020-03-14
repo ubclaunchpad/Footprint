@@ -6,9 +6,16 @@ import * as Google from 'expo-google-app-auth';
 
 import * as iosAuth from '../../secrets/ios-auth-client';
 
+// Note that the secrets folder is in the gitignore so we don't expose
+// an API key. It might be worth it for everyone to create their
+// own frontend/secrets/ios-auth-client.js file as well as an iOS
+// client on GCP
 const IOS_CLIENT_ID = iosAuth.iosClientID;
+// Since no Android Client is configured on GCP, this is going to fail
 const ANDROID_CLIENT_ID = '';
 
+// Currently the standard "Login" button has no onPress function defined
+// but we can add one later to the LoginScreen class
 export default class LoginScreen extends Component {
   signInWithGoogle = async () => {
     try {
@@ -21,7 +28,12 @@ export default class LoginScreen extends Component {
       if (result.type === "success") {
         console.log("LoginScreen.js.js 21 | ", result.user.givenName);
         this.props.navigation.navigate("Profile", {
-          username: result.user.givenName
+          // We pass the user's given name and profile photo photourl
+          // to the ProfileScreen as props. We can switch this to the
+          // AnalyticsScreen easily enough. See the ProfileScreen to see
+          // how the AnalyticsScreen can grab and use the props
+          username: result.user.givenName,
+          photoUrl: result.user.photoUrl
         }); //after Google login redirect to Profile
         return result.accessToken;
       } else {
