@@ -16,4 +16,4 @@ Footprint is built with a React Native frontend and a Flask-based Python backend
 | Carbon footprint data | CleanMetrics CarbonScope API |
 
 ## :raising_hand: Contributing
-Footprint is an opensource project maintained by UBC Launch Pad. Any contributions including pull requests, feedback, and ideas are more than welcome!
+Footprint is an opensource project maintained by UBC Launch Pad. Any contributions, including pull requests, bug fixes, feedback, and ideas, are more than welcome!
