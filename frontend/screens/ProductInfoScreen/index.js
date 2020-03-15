@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import FoodComponentCard from '../../components/FoodComponentCard';
-import splash from '../../assets/splash.png';
 
 export default function ProductInfoScreen(props) {
   //const { navigate, getParam } = props.navigation;
