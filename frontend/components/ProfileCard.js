@@ -3,14 +3,7 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import Red from '../assets/red-bg.svg';
 import Blue from '../assets/blue-bg.svg';
 
-/* The FoodComponentCard class is a custom view that displays what 
- * is in the food item a user has scanned. 
- * Props: type - the type of food ("meat", "dairy", "fish", "veg", "fruit", or "grains")
- *        icon - the icon representing the type of food as an svg
- * 
- * State: count - the # of times an item belonging to one type appeared
- *                  in what the user scanned
- */
+
 export default class ProfileCard extends Component {
     constructor(props) {
         super(props);
@@ -48,11 +41,20 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
     },
     text: {
-        color: '#555555'
+        color: '#555555',
+        fontSize: 16,
+        textAlign: 'center'
     },
     level: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 30,
+        textAlign: 'center',
+        paddingTop: 5,
+        paddingBottom: 5
     }
   });

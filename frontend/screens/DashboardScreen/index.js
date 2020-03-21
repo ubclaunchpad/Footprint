@@ -10,6 +10,7 @@ import {
  
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
 import ProfileCard from '../../components/ProfileCard'
+import ChallengeCard from '../../components/ChallengeCard'
  
 export default class App extends React.Component {
  
@@ -28,12 +29,12 @@ export default class App extends React.Component {
   render() {
     const barWidth = Dimensions.get('screen').width - 30;
     const progressCustomStyles = {
-      backgroundColor: '#7FCD91'
+      backgroundColor: '#7FCD91',
+      height: 20,
     };
  
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>Dashboard</Text>
         <View style={styles.profileWrapper} >
           <ProfileCard />
         </View>
@@ -44,6 +45,9 @@ export default class App extends React.Component {
             value={this.state.progress}
             backgroundColorOnComplete="#6CC644"
           />
+        </View>
+        <View style={styles.challenge}>
+          <ChallengeCard />
         </View>
       </View>
     );
@@ -60,15 +64,18 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 15,
   },
-  heading: {
-    marginBottom: 15,
-    textAlign: 'center',
-    fontSize: 18,
-    color: '#555555',
-  }, 
   profileWrapper: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    paddingTop: 30,
+    paddingBottom: 30
+  },
+  challenge: {
+    shadowOffset: {width: 2, height: 2},
+    shadowColor: 'black',
+    shadowOpacity: 0.3,
+    paddingLeft: 20,
+    paddingTop: 30
   }
 });

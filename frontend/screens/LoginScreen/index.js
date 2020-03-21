@@ -4,19 +4,24 @@ import Logo from '../../assets/logo.svg';
 
 import * as Google from 'expo-google-app-auth';
 
-import * as iosAuth from '../../secrets/ios-auth-client';
+// import * as iosAuth from '../../secrets/ios-auth-client';
 
 // Note that the secrets folder is in the gitignore so we don't expose
 // an API key. It might be worth it for everyone to create their
 // own frontend/secrets/ios-auth-client.js file as well as an iOS
 // client on GCP
-const IOS_CLIENT_ID = iosAuth.iosClientID;
+const IOS_CLIENT_ID = "temp"; // iosAuth.iosClientID;
 // Since no Android Client is configured on GCP, this is going to fail
 const ANDROID_CLIENT_ID = '';
 
 // Currently the standard "Login" button has no onPress function defined
 // but we can add one later to the LoginScreen class
 export default class LoginScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.continue = this.continue.bind(this);
+  }
+
   signInWithGoogle = async () => {
     try {
       const result = await Google.logInAsync({
@@ -45,11 +50,17 @@ export default class LoginScreen extends Component {
     }
   };
 
+  // For now, the Login button bypasses sign-in for testing purposes
+  continue() {
+    const { navigate } = this.props.navigation;
+    navigate("Profile");
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Logo style={styles.logo}></Logo>
-        <TouchableOpacity style={styles.button} onPress={this.onPress}>
+        <TouchableOpacity style={styles.button} onPress={this.continue}>
          <Text style={styles.buttonText}> Login </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonGoogle} onPress={this.signInWithGoogle}>
