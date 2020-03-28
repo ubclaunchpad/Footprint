@@ -6,7 +6,6 @@ import ProductInfoScreen from './screens/ProductInfoScreen';
 import LoginScreen from './screens/LoginScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const AppStack = createBottomTabNavigator({
@@ -34,7 +33,7 @@ const AppStack = createBottomTabNavigator({
       )
     }) 
   },
-  Awards: {
+  ProductInfoScreen: {
     screen: ProductInfoScreen,
     navigationOptions: () => ({
       tabBarIcon: ({tintColor}) => (

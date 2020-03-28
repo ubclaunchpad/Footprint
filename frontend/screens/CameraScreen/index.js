@@ -3,23 +3,37 @@ import { Text, View, TouchableOpacity, StyleSheet, Button } from 'react-native';
 import * as Permissions from 'expo-permissions';
 import { Camera } from 'expo-camera';
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'transparent',
-      alignItems: 'center',
-    },
-    text: {
-      fontSize: 17,
-      color: 'rgba(96,100,109, 1)',
-      lineHeight: 24,
-      textAlign: 'center',
-    },
-
-    bottom: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        marginBottom: 36
-      }
+  container: {
+      flex: 1,
+      backgroundColor: 'transparent',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+  bottom: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      marginBottom: 36
+  },
+  outerCircle: {
+    borderRadius: 30,
+    height: 60,
+    width: 60,
+    borderColor: 'white',
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  innerCircle: {
+    borderRadius: 25,
+    height: 50,
+    width: 50,
+    backgroundColor: 'white'
+  }
 });
 
 export default class CameraExample extends React.Component {
@@ -79,7 +93,6 @@ export default class CameraExample extends React.Component {
           }}>
             <View
               style={{...styles.container}}>
-                      <Button style={styles.buttom} title="Take photo" onPress={() => this.takePicture()} />
               <TouchableOpacity
                 style={{
                   flex: 0.1,
@@ -94,7 +107,12 @@ export default class CameraExample extends React.Component {
                         : Camera.Constants.Type.back,
                   });
                 }}>
-                <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
+                <Text style={{ fontSize: 18, marginTop: 30, marginRight: 20, color: 'white' }}> Flip </Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.takePicture()}>
+                <View style={styles.outerCircle}>
+                  <View style={styles.innerCircle} />
+                </View>
               </TouchableOpacity>
             </View>
           </Camera>

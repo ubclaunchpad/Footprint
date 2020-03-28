@@ -66,7 +66,7 @@ export default function ProductInfoScreen(props) {
 }
 
 ProductInfoScreen.navigationOptions = {
-  title: 'Footprint Components',
+  title: 'Awards',
 };
 
 const styles = {
