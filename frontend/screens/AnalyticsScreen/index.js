@@ -110,7 +110,7 @@ export default class HomeScreen extends React.Component {
             withInnerLines={false}
             withOuterLines={false}
             withVerticalLabels={false}
-            onDataPointClick={()=>{console.log('masoud')}}
+            onDataPointClick={(value)=>{console.log(value.value.toFixed(2))}}
             chartConfig={{
               backgroundColor: "white",
               backgroundGradientFrom: "white",
