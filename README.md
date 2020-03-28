@@ -23,11 +23,15 @@ To provide a focused solution, instead of focusing on general footprint from mul
 ## :writing_hand: Design Process
 Throughout the past 8 months, our team has divided up our design and development process into the following stages:
 
+![Deisgn Process](./project_images/design_process.png)
+
 ## :pencil: Ideation and Prototyping
 To create an APP that can be used to help to make informed decisions on food choices, we have conducted a competitive analysis to define the key areas of the problem we want to address.
 
 #### Competitive Analysis
-We have researched the top-ranked carbon footprint tracking tools and filter down to the ones that include food consumption measurement. 
+We have researched the top-ranked carbon footprint tracking tools and filter down to the ones that include food consumption measurement.
+
+![Competitive Analysis](./project_images/comp_analysis.png)
 
 From the analysis, we realized that most of the existing tools are hosted on websites, which focuses on raising awareness from individuals, rather than helping users to change their behaviors. 
 
@@ -42,6 +46,7 @@ We have also explored how the competitors utilize UX/UI to address the problems.
 - Is engaging and provides users an incentive to pursue a more plant-based diet
 
 #### Wireframing
+![Wireframe](./project_images/wirefram.png)
 
 ## Our Proposition and Final Design
 #### Overview
@@ -61,9 +66,10 @@ Footprint, an app dedicated to assisting individuals in reducing their food cons
 - Implement a point system with rewards for improvement 
 
 #### Final Design
+![Final Design](./project_images/final_design.png)
 
 #### User Flow
-
+![User Flow](./project_images/user_flow.png)
 
 ## :computer: Development
 #### Overview
@@ -75,6 +81,8 @@ Footprint is built with a React Native frontend and a Flask-based Python backend
 | User info storage | MongoDB Stitch |
 | Computer vision | pytesseract |
 | Carbon footprint data | CleanMetrics CarbonScope API |
+
+![System Diagram](./project_images/tech_stack.png)
 
 #### Frontend
 #### *Figma*
