@@ -9,8 +9,10 @@ import {
 } from 'react-native';
  
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
-import ProfileCard from '../../components/ProfileCard'
-import ChallengeCard from '../../components/ChallengeCard'
+import ProfileCard from '../../components/ProfileCard';
+import ChallengeCard from '../../components/ChallengeCard';
+import Menu from '../../assets/menu.svg';
+
  
 export default class App extends React.Component {
  
@@ -27,7 +29,7 @@ export default class App extends React.Component {
   }
  
   render() {
-    const barWidth = Dimensions.get('screen').width - 30;
+    const barWidth = 300;
     const progressCustomStyles = {
       backgroundColor: '#7FCD91',
       height: 20,
@@ -35,6 +37,12 @@ export default class App extends React.Component {
  
     return (
       <View style={styles.container}>
+        <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <Menu></Menu>
+            <View style = {{flex: 5}}></View>
+            <Text style = {{fontSize: 18}}>Dashboard</Text>
+            <View style = {{flex: 6}}></View>
+          </View>
         <View style={styles.profileWrapper} >
           <ProfileCard />
         </View>
@@ -60,7 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingHorizontal: 15,
     paddingBottom: 15,
-    paddingTop: 96,
+    paddingTop: 80,
     alignItems: 'center',
   },
   buttonContainer: {
@@ -70,14 +78,13 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingTop: 30,
+    paddingTop: 45,
     paddingBottom: 30
   },
   challenge: {
     shadowOffset: {width: 2, height: 2},
     shadowColor: 'black',
     shadowOpacity: 0.3,
-    paddingLeft: 20,
     paddingTop: 30
   }
 });

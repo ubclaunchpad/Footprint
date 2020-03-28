@@ -10,6 +10,7 @@ const screenWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      paddingTop: 56,
       backgroundColor: "white",
       justifyContent: 'center',
       paddingHorizontal: 20,
@@ -54,7 +55,6 @@ export default class HomeScreen extends React.Component {
     return (
       <View style = {styles.container}>
         <View style = {{flex: 4}}>
-          <View style = {{flex: 1}}></View>
           <View style = {{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
             <View style = {{flex: 2}}></View>
             <Text style = {{fontSize: 18}}>My Analytics</Text>
