@@ -46,7 +46,7 @@ We have also explored how the competitors utilize UX/UI to address the problems.
 - Is engaging and provides users an incentive to pursue a more plant-based diet
 
 #### Wireframing
-![Wireframe](./project_images/wirefram.png)
+![Wireframe](./project_images/wireframe.png)
 
 ## Our Proposition and Final Design
 #### Overview
