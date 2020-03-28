@@ -2,10 +2,10 @@
 
 Footprint is a React Native application that enables users to scan food items using computer vision and obtain the corresponding ecological footprint of the product.
 
-#### Timeframe
+### Timeframe
 8 months (October 2019 - April 2020)
 
-#### Skills
+### Skills
 - UX/UI
 - Competitive Analysis
 - Front-end & Back-end development
@@ -28,7 +28,7 @@ Throughout the past 8 months, our team has divided up our design and development
 ## :pencil: Ideation and Prototyping
 To help us create an app that can be used to help to make informed decisions on food choices, we conducted a competitive analysis to define the key areas of the problem we want to address.
 
-#### Competitive Analysis
+### Competitive Analysis
 We researched the top-ranked carbon footprint tracking tools and filter down to the ones that include food consumption measurement:
 
 ![Competitive Analysis](./project_images/comp_analysis.png)
@@ -45,19 +45,19 @@ We have also explored how the competitors utilize UX/UI to address the problems.
 - Curates and customizes data for each user  
 - Is engaging and provides users an incentive to pursue a more plant-based diet
 
-#### Wireframing
+### Wireframing
 ![Wireframe](./project_images/wireframe.png)
 
 ## Our Proposition and Final Design
-#### Overview
+### Overview
 Footprint, an app dedicated to assisting individuals in reducing their food consumption ecological footprint, will encourage behavioral change and a more sustainable lifestyle by providing personalized information for users to make the optimal decision. Instead of focusing on creating awareness, Footprint is a personalized tool for users to take action in saving the planet.
 
-#### Product Specifications
+### Product Specifications
 - Displays data about how they are purchasing to allow them to understand their footprint
 - Provides the motivation to make the change 
 - Providing concrete goals, suggestions, etc for users to make changes
 
-#### MVP Outline
+### MVP Outline
 - Scanning receipts
 - Calculating breakdown of people's footprint on that receipt
 - Tracking and displaying their trends over time
@@ -65,14 +65,14 @@ Footprint, an app dedicated to assisting individuals in reducing their food cons
 - Provide goals
 - Implement a point system with rewards for improvement 
 
-#### Final Design
+### Final Design
 ![Final Design](./project_images/final_design.png)
 
-#### User Flow
+### User Flow
 ![User Flow](./project_images/user_flow.png)
 
 ## :computer: Development
-#### Overview
+### Overview
 Footprint is built with a React Native frontend and a Flask-based Python backend.
 
 | Feature | Technology |
@@ -84,14 +84,14 @@ Footprint is built with a React Native frontend and a Flask-based Python backend
 
 ![System Diagram](./project_images/tech_stack.png)
 
-#### Frontend
+### Frontend
 #### *Figma*
 We used Figma which is a free browser-based collaboration tool for UX designers. Aside from cost savings, using Figma to create a wireframe and prototype allowed us to collaboratively review the design, leave comments, and make updates or edits.  
 
 #### *React Native*
 We chose to build our app using React Native because it is easy to deploy to both Android and iOS, and it does not require any special development tools beyond npm and a text editor. We also chose to work with Expo CLI because it is a great tool to get started with. Expo CLI makes accessing native components such as the camera simple and easy. While it does not provide quite as many opportunities to fine-tune configurations and add native code as the React Native CLI does, we found it worked well for our purposes, and it streamlined our development process.
 
-#### Backend
+### Backend
 #### *Google Sign-In*
 We decided to use Google Sign-In for authentication to prevent our users from needing to create a separate account. Google Sign-In is more convenient for users, and it also gives users the reassurance that their personal data is being handled securely. In addition, this decision  streamlined the authentication process for our team, since we didn’t need to store passwords or implement features such as password recovery. 
 
@@ -114,7 +114,7 @@ Regarding design, picking colors for the UI and creating color palettes for the 
 ## :raising_hand: Contributing
 Footprint is an opensource project maintained by UBC Launch Pad. Any contributions, including pull requests, bug fixes, feedback, and ideas, are more than welcome!
 
-#### Our Team
+### Our Team
 | Name | Role | Key Contributions |
 |------|------|-------------------|
 | Sarah Bornais | Tech Lead | Project management, React Native frontend, database, CarbonScope API integration |
