@@ -26,10 +26,10 @@ Throughout the past 8 months, our team has divided up our design and development
 ![Deisgn Process](./project_images/design_process.png)
 
 ## :pencil: Ideation and Prototyping
-To create an APP that can be used to help to make informed decisions on food choices, we have conducted a competitive analysis to define the key areas of the problem we want to address.
+To help us create an app that can be used to help to make informed decisions on food choices, we conducted a competitive analysis to define the key areas of the problem we want to address.
 
 #### Competitive Analysis
-We have researched the top-ranked carbon footprint tracking tools and filter down to the ones that include food consumption measurement.
+We researched the top-ranked carbon footprint tracking tools and filter down to the ones that include food consumption measurement:
 
 ![Competitive Analysis](./project_images/comp_analysis.png)
 
