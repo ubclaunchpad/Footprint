@@ -58,8 +58,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    padding: 15,
-    alignContent: 'center',
+    paddingHorizontal: 15,
+    paddingBottom: 15,
+    paddingTop: 96,
+    alignItems: 'center',
   },
   buttonContainer: {
     marginTop: 15,

@@ -1,18 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, Dimensions, ScrollView, Image} from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
+
 import Red from '../../assets/red-bg.svg';
 import Blue from '../../assets/blue-bg.svg';
-import {Button} from 'react-native';
-import { VictoryLine, VictoryChart } from 'victory-native';
-import MSSQL from 'react-native-mssql';
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart
-} from 'react-native-chart-kit';
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -35,6 +26,7 @@ const styles = StyleSheet.create({
       fontWeight: '800',
     },
     scrollItem: {
+      flex: 1,
       marginHorizontal: 10,
       shadowColor: "#000",
       shadowOffset: {
@@ -118,13 +110,13 @@ export default class HomeScreen extends React.Component {
             withInnerLines={false}
             withOuterLines={false}
             withVerticalLabels={false}
+            onDataPointClick={()=>{console.log('masoud')}}
             chartConfig={{
               backgroundColor: "white",
               backgroundGradientFrom: "white",
               backgroundGradientTo: "white",
               decimalPlaces: 2, // optional, defaults to 2dp
               color: (opacity = 1) => `rgba(33, 191, 115, ${opacity})`,
-              getDotColor: (dataPoint, dataPointIndex) => 'white',
               style: {
                 borderRadius: 16
               },
