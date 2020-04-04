@@ -4,8 +4,6 @@ import { LineChart } from 'react-native-chart-kit';
 
 import FootprintCard from '../../components/FootprintCard';
 import EmissionsCard from '../../components/EmissionsCard';
-import Red from '../../assets/red-bg.svg';
-import Blue from '../../assets/blue-bg.svg';
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -86,15 +84,6 @@ export default class HomeScreen extends React.Component {
                 <View style = {styles.scrollItem}>
                   <FootprintCard amount="124K" timeframe="This Month" color="red"></FootprintCard>
                 </View>
-                {/* <View>
-                  <Red style = {styles.scrollItem}></Red>
-                </View>
-                <View>
-                  <Red style = {styles.scrollItem}></Red>
-                </View>
-                <Red style = {styles.scrollItem}></Red>
-                <Blue style = {styles.scrollItem}></Blue>
-                <Red style = {styles.scrollItem}></Red> */}
               </ScrollView>
             </View>
           </View>

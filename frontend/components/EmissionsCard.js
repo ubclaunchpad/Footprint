@@ -3,10 +3,10 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import Red from '../assets/red-bg.svg';
 import Blue from '../assets/blue-bg.svg';
 
-/* The FoodComponentCard class is a custom view that displays what 
- * is in the food item a user has scanned. 
+/* The EmissionsCard class is a custom view that displays
+ * the percentage of a user's carbon footprint that comes from one food type 
  * Props: type - the type of food ("meat", "dairy", "fish", "veg", "fruit", or "grains")
- *        icon - the icon representing the type of food as an svg
+ *        percentage - the percentage of emissions coming from the food group
  * 
  * State: count - the # of times an item belonging to one type appeared
  *                  in what the user scanned

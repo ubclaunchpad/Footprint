@@ -3,13 +3,13 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import Red from '../assets/red-bg.svg';
 import Blue from '../assets/blue-bg.svg';
 
-/* The FoodComponentCard class is a custom view that displays what 
- * is in the food item a user has scanned. 
- * Props: timeframe - the timeframe of food ("meat", "dairy", "fish", "veg", "fruit", or "grains")
- *        icon - the icon representing the timeframe of food as an svg
+/* The FootprintCard class is a custom view that displays 
+ * the carbon footprint over a past period of time. 
+ * Props: timeframe - the timeframe being considered ("Today", "This Week", "This Month")
+ *        amount - the amount of **INSERT UNITS HERE** of a carbon footprint
  * 
- * State: count - the # of times an item belonging to one timeframe appeared
- *                  in what the user scanned
+ * State:
+ * 
  */
 export default class FootprintCard extends Component {
     constructor(props) {
