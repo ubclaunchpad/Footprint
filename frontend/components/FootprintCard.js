@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
+
 import Red from '../assets/red-bg.svg';
 import Blue from '../assets/blue-bg.svg';
 
@@ -17,7 +18,7 @@ export default class FootprintCard extends Component {
         this.state = {
 
         };
-      }
+    }
     
     render() {
         const redBackground = <Red style={styles.background} />
@@ -44,12 +45,12 @@ export default class FootprintCard extends Component {
 
 const styles = StyleSheet.create({
     baseText: {
-      fontFamily: 'Cochin',
+        fontFamily: 'Cochin',
     },
     amount: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      color: '#FFFFFF',
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#FFFFFF',
     },
     timeframe: {
         fontSize: 13,
@@ -60,4 +61,4 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-  });
+});
