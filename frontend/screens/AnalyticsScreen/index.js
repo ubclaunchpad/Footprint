@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {StyleSheet, Text, View, Dimensions, ScrollView, Image} from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
@@ -7,51 +7,7 @@ import EmissionsCard from '../../components/EmissionsCard';
 
 const screenWidth = Dimensions.get("window").width;
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingTop: 56,
-      backgroundColor: "white",
-      justifyContent: 'center',
-      paddingHorizontal: 20,
-    },
-    text: {
-      fontSize: 17,
-      color: 'rgba(96,100,109, 1)',
-      lineHeight: 24,
-      textAlign: 'center',
-    },
-    headerText: {
-      fontSize: 18,
-      lineHeight: 27,
-      fontWeight: '800',
-    },
-    unitsText: {
-      fontSize: 10,
-      color: '#AAAAAA',
-      lineHeight: 15,
-      alignSelf: 'flex-end',
-    },
-    scrollItem: {
-      flex: 1,
-      marginHorizontal: 10,
-      shadowColor: "#000",
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowOpacity: 0.23,
-      shadowRadius: 2.62,
-
-      elevation: 4,
-    },
-    photo: {
-      flex: 1,
-    },
-});
-
-
-export default class HomeScreen extends React.Component {
+export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {navigate: props.navigation};
@@ -138,13 +94,12 @@ export default class HomeScreen extends React.Component {
             onDataPointClick={(value) => {
               console.log(value.value.toFixed(2));
               console.log(value.x.toFixed(2), value.y.toFixed(2));
-              //something else
             }}
             chartConfig={{
               backgroundColor: "white",
               backgroundGradientFrom: "white",
               backgroundGradientTo: "white",
-              decimalPlaces: 0, // optional, defaults to 2dp
+              decimalPlaces: 0, // optional, defaults to 2 (2dp)
               color: (opacity = 1) => `rgba(33, 191, 115, ${opacity})`,
               style: {
                 borderRadius: 16
@@ -165,3 +120,45 @@ export default class HomeScreen extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 56,
+    backgroundColor: "white",
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  text: {
+    fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+  headerText: {
+    fontSize: 18,
+    lineHeight: 27,
+    fontWeight: '800',
+  },
+  unitsText: {
+    fontSize: 10,
+    color: '#AAAAAA',
+    lineHeight: 15,
+    alignSelf: 'flex-end',
+  },
+  scrollItem: {
+    flex: 1,
+    marginHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+  },
+  photo: {
+    flex: 1,
+  },
+});
