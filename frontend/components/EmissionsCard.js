@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
     },
     type: {
-        fontSize: 13,
+        fontSize: 15,
         fontWeight: '500',
         color: '#FFFFFF',
     },

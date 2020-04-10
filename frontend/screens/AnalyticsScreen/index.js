@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
       lineHeight: 27,
       fontWeight: '800',
     },
-    headerTextWeekly: {
-      fontSize: 18,
-      lineHeight: 27,
-      fontWeight: '800',
-      marginBottom: 20,
+    unitsText: {
+      fontSize: 10,
+      color: '#AAAAAA',
+      lineHeight: 15,
+      alignSelf: 'flex-end',
     },
     scrollItem: {
       flex: 1,
@@ -72,7 +72,10 @@ export default class HomeScreen extends React.Component {
             </View>
           </View>
           <View style = {{flex: 3}}>
-            <Text style = {styles.headerText}>My Footprints</Text>
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Text style = {styles.headerText}>My Footprints</Text>
+              <Text style = {styles.unitsText}>g CO2e</Text>
+            </View>
             <View style = {{flex: 1, justifyContent: 'center', alignItems: 'center', alignContent: 'center'}}>
               <ScrollView horizontal = {true} contentContainerStyle= {{marginTop: 40, marginBottom: 20}} style = {{flex: 1}}>
                 <View style = {styles.scrollItem}>
@@ -105,7 +108,10 @@ export default class HomeScreen extends React.Component {
           </View>
         </View>
         <View style = {{flex: 2}}>
-          <Text style = {styles.headerTextWeekly}>Weekly Footprints</Text>
+          <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 20}}>
+            <Text style = {styles.headerText}>Weekly Footprints</Text>
+            <Text style = {styles.unitsText}>kg CO2e</Text>
+          </View>
           <LineChart
             data={{
               labels: ["M", "T", "W", "Th", "F", "Sat", "Sun"],
