@@ -15,7 +15,7 @@ Footprint is a React Native application that enables users to scan food items us
 ## 🌳 Background and Motivation
 We hope that Footprint will empower individuals to make environmentally informed decisions about the food they consume. Our food system contributes over 25% of total greenhouse gas emissions and 80% of global deforestation. So naturally, eating a more ecologically-conscious diet is one of the best ways to reduce your carbon footprint. However, specific and accurate information about how to eat an ecologically-conscious diet is difficult to find. Additionally, we understand that it can be difficult for one to change their habits. Therefore, we decided to create a tool that not only will be able to assist users’ decision making by providing information on users’ ecological footprint with respect to their food choices, but also will be able to track their progress and make their efforts visible. Footprint aims to provide detailed and accurate information about food items, while still maintaining a friendly and easy-to-use interface.
 
-[![Video](https://img.youtube.com/vi/SWjSJEDxf_E/0.jpg)](https://www.youtube.com/watch?v=SWjSJEDxf_E)
+[![Video](./project_images/thumbnail_footprint (two colors).jpg)](https://www.youtube.com/watch?v=SWjSJEDxf_E)
 
 ## :question: Problem Definition and Solution
 There are many approaches for us to become more sustainable, and most of the people are aware of them. However, what is stopping people from taking action?
