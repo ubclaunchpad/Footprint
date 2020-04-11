@@ -84,7 +84,7 @@ const styles = {
     fontWeight: 'bold',
   },
   container: {
-    marginTop: 48,
+    marginTop: 96,
     flex: 1
   },
   headerStyle: {
