@@ -1,41 +1,13 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from 'react-native';
-import { VictoryLine, VictoryChart } from 'victory-native';
-import MSSQL from 'react-native-mssql';
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart
-} from 'react-native-chart-kit';
+import React, { Component } from 'react';
+import {StyleSheet, Text, View, Dimensions, ScrollView, Image} from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
 
-const data = [
-  { quarter: 1, earnings: 13000 },
-  { quarter: 2, earnings: 16500 },
-  { quarter: 3, earnings: 14250 },
-  { quarter: 4, earnings: 19000 }
-];
+import FootprintCard from '../../components/FootprintCard';
+import EmissionsCard from '../../components/EmissionsCard';
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#f5fcff",
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    text: {
-      fontSize: 17,
-      color: 'rgba(96,100,109, 1)',
-      lineHeight: 24,
-      textAlign: 'center',
-    },
-});
+const screenWidth = Dimensions.get("window").width;
 
-
-export default class HomeScreen extends React.Component {
+export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {navigate: props.navigation};
@@ -43,52 +15,150 @@ export default class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View>
-  <Text>Bezier Line Chart</Text>
-  <LineChart
-    data={{
-      labels: ["January", "February", "March", "April", "May", "June"],
-      datasets: [
-        {
-          data: [
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100
-          ]
-        }
-      ]
-    }}
-    width={220} // from react-native
-    height={220}
-    yAxisLabel="$"
-    yAxisSuffix="k"
-    chartConfig={{
-      backgroundColor: "#e26a00",
-      backgroundGradientFrom: "#fb8c00",
-      backgroundGradientTo: "#ffa726",
-      decimalPlaces: 2, // optional, defaults to 2dp
-      color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-      labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-      style: {
-        borderRadius: 16
-      },
-      propsForDots: {
-        r: "6",
-        strokeWidth: "2",
-        stroke: "#ffa726"
-      }
-    }}
-    bezier
-    style={{
-      marginVertical: 8,
-      borderRadius: 16
-    }}
-  />
-  <Button title="Camera" onPress={() => navigate('Camera')} />
-</View>
+      <View style = {styles.container}>
+        <View style = {{flex: 4}}>
+          <View style = {{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <View style = {{flex: 2}}></View>
+            <Text style = {{fontSize: 18}}>My Analytics</Text>
+            <View style = {{flex: 1}}></View>
+            <View style={styles.photo}>
+              <Image 
+                  source={require('../../assets/profile_photo.png')}  
+                  style={{width: 40, height: 40, borderRadius: 20}} />
+            </View>
+          </View>
+          <View style = {{flex: 3}}>
+            <View style = {{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Text style = {styles.headerText}>My Footprints</Text>
+              <Text style = {styles.unitsText}>g CO2e</Text>
+            </View>
+            <View style = {{flex: 1, justifyContent: 'center', alignItems: 'center', alignContent: 'center'}}>
+              <ScrollView horizontal = {true} contentContainerStyle= {{marginTop: 40, marginBottom: 20}} style = {{flex: 1}}>
+                <View style = {styles.scrollItem}>
+                  <FootprintCard amount="4K" timeframe="Today" color="red"></FootprintCard>
+                </View>
+                <View style = {styles.scrollItem}>
+                  <FootprintCard amount="39K"timeframe="This Week" color="blue"></FootprintCard>
+                </View>
+                <View style = {styles.scrollItem}>
+                  <FootprintCard amount="124K" timeframe="This Month" color="red"></FootprintCard>
+                </View>
+              </ScrollView>
+            </View>
+          </View>
+          <View style = {{flex: 3}}>
+            <Text style = {styles.headerText}>My Top 3 Emissions</Text>
+            <View style = {{flex: 1, justifyContent: 'center', alignItems: 'center', alignContent: 'center'}}>
+              <ScrollView horizontal = {true} contentContainerStyle= {{marginTop: 40, marginBottom: 20}} style = {{flex: 1}}>
+                <View style = {styles.scrollItem}>
+                  <EmissionsCard percentage="30%" type="Meat" color="red"></EmissionsCard>
+                </View>
+                <View style = {styles.scrollItem}>
+                  <EmissionsCard percentage="15%" type="Dairy" color="blue"></EmissionsCard>
+                </View>
+                <View style = {styles.scrollItem}>
+                  <EmissionsCard percentage="12%" type="Grains" color="red"></EmissionsCard>
+                </View>
+              </ScrollView>
+            </View>
+          </View>
+        </View>
+        <View style = {{flex: 2}}>
+          <View style = {{flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 20}}>
+            <Text style = {styles.headerText}>Weekly Footprints</Text>
+            <Text style = {styles.unitsText}>kg CO2e</Text>
+          </View>
+          <LineChart
+            data={{
+              labels: ["M", "T", "W", "Th", "F", "Sat", "Sun"],
+              datasets: [
+                {
+                  data: [
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100,
+                    Math.random() * 100
+                  ]
+                }
+              ]
+            }}
+            width={screenWidth - 36} // from react-native
+            height={180}
+            withInnerLines={true}
+            withOuterLines={false}
+            withVerticalLabels={true}
+            withHorizontalLabels={true}
+            onDataPointClick={(value) => {
+              console.log(value.value.toFixed(2));
+              console.log(value.x.toFixed(2), value.y.toFixed(2));
+            }}
+            chartConfig={{
+              backgroundColor: "white",
+              backgroundGradientFrom: "white",
+              backgroundGradientTo: "white",
+              decimalPlaces: 0, // optional, defaults to 2 (2dp)
+              color: (opacity = 1) => `rgba(33, 191, 115, ${opacity})`,
+              style: {
+                borderRadius: 16
+              },
+              propsForDots: {
+                r: "4",
+                strokeWidth: "2",
+                stroke: "#21BF73",
+              }
+            }}
+            bezier
+            style={{
+              marginVertical: 8,
+              borderRadius: 8
+            }}/>
+        </View>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 56,
+    backgroundColor: "white",
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  text: {
+    fontSize: 17,
+    color: 'rgba(96,100,109, 1)',
+    lineHeight: 24,
+    textAlign: 'center',
+  },
+  headerText: {
+    fontSize: 18,
+    lineHeight: 27,
+    fontWeight: '800',
+  },
+  unitsText: {
+    fontSize: 10,
+    color: '#AAAAAA',
+    lineHeight: 15,
+    alignSelf: 'flex-end',
+  },
+  scrollItem: {
+    flex: 1,
+    marginHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+  },
+  photo: {
+    flex: 1,
+  },
+});
